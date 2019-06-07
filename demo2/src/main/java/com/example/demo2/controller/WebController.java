@@ -42,7 +42,7 @@ public class WebController {
 	//		response.setStatus(HttpStatus.FORBIDDEN);
 			Map<String,Object> map = new HashMap<String,Object>();
 		    map.put("message", "User does not exist");
-		    return new ResponseEntity<Map<String,Object>>(map,HttpStatus.OK);
+		    return new ResponseEntity<Map<String,Object>>(map,HttpStatus.FORBIDDEN);
 			
 			//return response;
 		}
@@ -51,15 +51,15 @@ public class WebController {
 	//		response.setStatus(HttpStatus.FORBIDDEN);
 			Map<String,Object> map = new HashMap<String,Object>();
 		    map.put("message", "Password error");
-		    return new ResponseEntity<Map<String,Object>>(map,HttpStatus.OK);
+		    return new ResponseEntity<Map<String,Object>>(map,HttpStatus.FORBIDDEN);
 			//return response;
 		}
 		
 		else {
 			response.setMessage("Nope");
 			Map<String,Object> map = new HashMap<String,Object>();
-		    map.put("name", "zhangsan");
-		    return new ResponseEntity<Map<String,Object>>(map,HttpStatus.OK);
+		    map.put("message", "Nope");
+		    return new ResponseEntity<Map<String,Object>>(map,HttpStatus.BAD_REQUEST);
 		//	return response;
 		}
 		
