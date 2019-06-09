@@ -21,9 +21,9 @@ public class WebController {
 	
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
 	public ResponseEntity<Map<String,Object>> Test(@RequestBody PostRequest inputPayload) {
-		PostResponse response = new PostResponse();
+//		PostResponse response = new PostResponse();
 		if (inputPayload.getUser().equals("admin") && inputPayload.getPassword().equals("123456")) {
-			response.setMessage("Hello, admin");
+		//	response.setMessage("Hello, admin");
 			Map<String,Object> map = new HashMap<String,Object>();
 		    map.put("message", "Hello, admin");
 		    return new ResponseEntity<Map<String,Object>>(map,HttpStatus.OK);
@@ -48,7 +48,7 @@ public class WebController {
 		}
 		
 		else {
-			response.setMessage("Nope");
+	//		response.setMessage("Nope");
 			Map<String,Object> map = new HashMap<String,Object>();
 		    map.put("message", "Nope");
 		    return new ResponseEntity<Map<String,Object>>(map,HttpStatus.BAD_REQUEST);
