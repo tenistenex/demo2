@@ -17,15 +17,7 @@ import com.example.demo2.model.SampleResponse;
 
 @RestController
 public class WebController {
-	@RequestMapping("/sample")
-	public SampleResponse Sample(@RequestParam(value = "name",
-	defaultValue = "Robot") String name) {
-		SampleResponse response = new SampleResponse();
-		response.setId(1);
-		response.setMessage("Your name is "+name);
-		return response;
-
-	}
+	
 	
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
 	public ResponseEntity<Map<String,Object>> Test(@RequestBody PostRequest inputPayload) {
